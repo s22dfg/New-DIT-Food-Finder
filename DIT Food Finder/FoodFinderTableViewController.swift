@@ -63,8 +63,8 @@ class FoodFinderTableViewController: UITableViewController {
         
         let optionMenu = UIAlertController(title: nil, message: "뭘 원하시나요?",preferredStyle: .actionSheet)
         
-        
         let cancelAction = UIAlertAction (title:"Cancel", style: .cancel, handler: nil)
+        
         let callAction = UIAlertAction (title: "전화걸기", style: .default) {
             (action: UIAlertAction) -> Void in
             print("전화 걸기 실행")
@@ -73,6 +73,7 @@ class FoodFinderTableViewController: UITableViewController {
             alertMessage.addAction(okAction)
             self.present(alertMessage, animated: true)
         }
+        
         optionMenu.addAction(cancelAction)
         optionMenu.addAction(callAction)
         present(optionMenu, animated: true)
