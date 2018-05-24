@@ -74,6 +74,7 @@ class FoodFinderTableViewController: UITableViewController {
             alertMessage.addAction(okAction)
             self.present(alertMessage, animated: true)
         }
+        
         // check-in action
         let checkinAction = UIAlertAction(title: "Check in", style: .default) {
             (action: UIAlertAction) -> Void in
@@ -81,9 +82,17 @@ class FoodFinderTableViewController: UITableViewController {
             cell?.accessoryType = .checkmark
         }
         
+        // uncheck action
+        let uncheckAction = UIAlertAction(title: "unckeck", style: .default) {
+            (action: UIAlertAction) -> Void in
+            let cell = tableView.cellForRow(at: indexPath)
+            cell?.accessoryType = .none
+        }
+        
         optionMenu.addAction(cancelAction)
         optionMenu.addAction(callAction)
         optionMenu.addAction(checkinAction)
+        optionMenu.addAction(uncheckAction)
         
         present(optionMenu, animated: true)
     }
